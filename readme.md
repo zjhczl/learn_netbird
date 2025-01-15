@@ -57,3 +57,28 @@ export NETBIRD_DOMAIN=netbird.example.com
 bash getting-started-with-zitadel.sh
 
 ```
+
+## 问题
+### docker镜像拉取出错
+创建或修改 /etc/docker/daemon.json
+```
+{
+    "registry-mirrors": [
+        "https://docker.m.daocloud.io/",
+        "https://huecker.io/",
+        "https://dockerhub.timeweb.cloud",
+        "https://noohub.ru/",
+        "https://dockerproxy.com",
+        "https://docker.mirrors.ustc.edu.cn",
+        "https://docker.nju.edu.cn",
+        "https://xx4bwyg2.mirror.aliyuncs.com",
+        "http://f1361db2.m.daocloud.io",
+        "https://registry.docker-cn.com",
+        "http://hub-mirror.c.163.com"
+    ]
+}
+```
+```
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
